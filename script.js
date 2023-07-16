@@ -14,17 +14,23 @@ $(document).ready(function() {
   let color = "";
 
   $.each(array, function(index,word) {
-    new RegExp(/false/).test(word) ?
+//set to red
+    /^false$/.test(word) ?
       color = colors["red"]:
-    new RegExp(/some/).test(word) ?
-      color = colors["orange"]:    
-    new RegExp(/.*stock$/).test(word) ?
+//set to orange
+    /^some$/.test(word) ?
+      color = colors["orange"]:
+//set to yellow
+    /.*stock$/.test(word) ?
       color = colors["yellow"]:
-    new RegExp(/true/).test(word) ?
+//set to green
+    /^true$/.test(word) ?
       color = colors["green"]:
-    new RegExp(/new|loc|old|all|why/).test(word) ?
+//set to aqua
+     /^(new|loc|old|all|why)$/.test(word) ?
       color = colors["aqua"]:
-    new RegExp(/^[A-Z]\d{2}/).test(word) ?
+//set to purple
+    /^[A-Z]\d{2}/.test(word) ?
       color = colors["purple"]:
       color = "#DDDDDD";
     
